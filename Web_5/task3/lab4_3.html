@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 3 – Анкета</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<form action="#" method="post">
+    <h1>Анкета учасника</h1>
+    <p class="intro">Заповніть, будь ласка, анкету. Поля, позначені зірочкою, обов'язкові.</p>
+
+    <fieldset>
+        <legend>Особисті дані</legend>
+        <p>
+            <label for="name">Прізвище та ім'я *</label>
+            <input type="text" id="name" name="name" required>
+        </p>
+        <p>
+            <label for="email">Електронна пошта *</label>
+            <input type="email" id="email" name="email" required>
+        </p>
+        <p>
+            <label for="birth">Дата народження</label>
+            <input type="date" id="birth" name="birth">
+        </p>
+        <p>
+            Стать:
+            <label><input type="radio" name="gender" value="f"> жіноча</label>
+            <label><input type="radio" name="gender" value="m"> чоловіча</label>
+        </p>
+    </fieldset>
+
+    <fieldset>
+        <legend>Освіта та інтереси</legend>
+        <p>
+            <label for="level">Рівень освіти</label>
+            <select id="level" name="level">
+                <option>Середня</option>
+                <option>Бакалавр</option>
+                <option>Магістр</option>
+            </select>
+        </p>
+        <p>
+            Цікавить:
+            <label><input type="checkbox" name="topic" value="html"> HTML</label>
+            <label><input type="checkbox" name="topic" value="css"> CSS</label>
+            <label><input type="checkbox" name="topic" value="js"> JavaScript</label>
+        </p>
+        <p>
+            <label for="about">Про себе</label>
+            <textarea id="about" name="about" rows="4"></textarea>
+        </p>
+    </fieldset>
+
+    <p class="buttons">
+        <input type="submit" value="Надіслати">
+        <input type="reset" value="Очистити">
+    </p>
+</form>
+</body>
+</html>
