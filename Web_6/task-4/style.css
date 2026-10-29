@@ -1,0 +1,144 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #222;
+}
+
+ul { margin: 0; padding: 0; list-style: none; }
+a  { text-decoration: none; }
+
+.material-icons { vertical-align: middle; }
+
+/* =========================================================
+   ГОРИЗОНТАЛЬНА ПАНЕЛЬ
+   ========================================================= */
+.page-horizontal { padding-top: 56px; } /* місце під fixed-панель */
+
+.hnav {
+    position: fixed;          /* фіксація у верхній частині сторінки */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 56px;
+    background-color: #555;
+    z-index: 100;
+}
+
+.hnav-list:after { content: ''; display: block; clear: both; }
+
+.hnav-item {
+    position: relative;
+    float: left;
+}
+
+.hnav-item--right { float: right; } /* останній пункт — праворуч */
+
+.hnav-link {
+    display: block;
+    height: 56px;
+    padding: 0 28px;
+    line-height: 56px;
+    color: #fff;
+}
+
+.hnav-link .material-icons { font-size: 28px; line-height: 56px; }
+
+.hnav-item:hover > .hnav-link       { background-color: #333; }
+.hnav-item--active > .hnav-link,
+.hnav-item--active:hover > .hnav-link { background-color: #4caf50; } /* активний пункт */
+
+/* випадні списки */
+.hnav-sub {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background-color: #444;
+    display: none;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.hnav-sub--right { left: auto; right: 0; }
+
+.hnav-sub li { position: relative; }
+
+.hnav-sub a {
+    display: block;
+    padding: 12px 18px;
+    color: #fff;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.hnav-sub a .arrow { float: right; font-size: 20px; }
+.hnav-sub a:hover  { background-color: #4caf50; }
+
+/* третій рівень — збоку */
+.hnav-sub .hnav-sub { top: 0; left: 100%; }
+
+.hnav-item:hover > .hnav-sub,
+.hnav-sub li:hover > .hnav-sub { display: block; }
+
+/* контент */
+.content { max-width: 800px; margin: 0 auto; padding: 24px; }
+
+.sticky-bar {
+    position: sticky;         /* «липка» панель під fixed-меню */
+    top: 56px;
+    padding: 14px 18px;
+    background-color: #ffc107;
+    font-weight: 700;
+    z-index: 50;
+}
+
+.filler { margin: 0; padding: 40px 0 120px; line-height: 1.6; }
+
+/* =========================================================
+   ВЕРТИКАЛЬНА ПАНЕЛЬ
+   ========================================================= */
+.vnav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;            /* повна висота */
+    background-color: #0a6ebd;
+    z-index: 100;
+}
+
+.vnav-item { position: relative; }
+
+.vnav-link {
+    display: flex;
+    align-items: center;
+    padding: 18px 18px;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    font-size: 16px;
+}
+
+.vnav-link .material-icons { margin-right: 14px; font-size: 22px; }
+.vnav-link .arrow          { margin: 0 0 0 auto; font-size: 20px; }
+
+.vnav-item:hover > .vnav-link { background-color: #07538f; }
+.vnav-item--active > .vnav-link { background-color: #0d8aea; box-shadow: inset 4px 0 0 #ffc107; }
+
+/* вкладені списки відкриваються праворуч */
+.vnav-sub {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 220px;
+    background-color: #0a6ebd;
+    display: none;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.vnav-item:hover > .vnav-sub { display: block; }
+
+.vnav-sub .vnav-link { padding: 14px 18px; font-size: 15px; }
+
+.content--vertical { margin-left: 220px; max-width: none; }

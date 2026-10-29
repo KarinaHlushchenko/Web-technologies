@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна 6 — Завдання 6: попап</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page">
+
+    <header class="header">
+        <a class="header-link" href="#">Mail</a>
+        <a class="header-link" href="#">Images</a>
+
+        <div class="apps">
+            <!-- прихований, але фокусований checkbox керує станом попапу -->
+            <input class="popup-toggle" type="checkbox" id="popup-toggle" aria-label="Програми">
+            <label class="popup-button" for="popup-toggle"></label>
+
+            <div class="popup">
+                <!-- контейнер у прокручуваному стані має фокус для прокрутки стрілками -->
+                <div class="popup-scroll" tabindex="0">
+
+                    <div class="popup-grid">
+                        <a class="popup-item" href="#">
+                            <svg class="popup-icon" viewBox="0 0 48 48"><rect x="4" y="8" width="40" height="34" rx="3" fill="#b3c3ea"/><rect x="4" y="8" width="40" height="7" fill="#7f94c7"/><rect x="10" y="20" width="28" height="3" fill="#8fa3d6"/><rect x="10" y="27" width="28" height="3" fill="#8fa3d6"/><rect x="10" y="34" width="28" height="3" fill="#8fa3d6"/></svg>
+                            <span class="popup-label">Calendar</span>
+                        </a>
+                        <a class="popup-item" href="#">
+                            <svg class="popup-icon" viewBox="0 0 48 48"><rect x="4" y="10" width="40" height="28" fill="#f8cdb4"/><path d="M4 10 L24 28 L44 10" fill="none" stroke="#fbe3d3" stroke-width="2"/></svg>
+                            <span class="popup-label">Mail</span>
+                        </a>
+                        <a class="popup-item" href="#">
+                            <svg class="popup-icon" viewBox="0 0 48 48"><rect x="8" y="6" width="36" height="30" fill="#c7dba0"/><rect x="4" y="10" width="38" height="30" fill="#b3c3ea"/><rect x="8" y="15" width="12" height="10" fill="#6b7aa3"/><rect x="23" y="15" width="15" height="3" fill="#6b7aa3"/><rect x="23" y="21" width="15" height="3" fill="#6b7aa3"/><rect x="8" y="29" width="30" height="3" fill="#6b7aa3"/></svg>
+                            <span class="popup-label">News</span>
+                        </a>
+                        <a class="popup-item" href="#">
+                            <svg class="popup-icon" viewBox="0 0 48 48"><rect x="4" y="12" width="12" height="28" fill="#a8d08d"/><rect x="16" y="12" width="28" height="28" fill="#e4e4e4"/><path d="M34 6a8 8 0 0 1 8 8c0 6-8 14-8 14s-8-8-8-14a8 8 0 0 1 8-8z" fill="#c00000"/><circle cx="34" cy="14" r="3" fill="#fff"/></svg>
+                            <span class="popup-label">Map</span>
+                        </a>
+                        <a class="popup-item" href="#">
+                            <svg class="popup-icon" viewBox="0 0 48 48"><path d="M4 12h16l4 4h20v24H4z" fill="#ffd966"/><path d="M4 20h40v20H4z" fill="#ffe08a"/></svg>
+                            <span class="popup-label">Files</span>
+                        </a>
+                        <a class="popup-item" href="#">
+                            <svg class="popup-icon" viewBox="0 0 48 48"><rect x="4" y="8" width="40" height="34" fill="#4d7a2e"/><circle cx="24" cy="21" r="6" fill="#e8f2dc"/><rect x="16" y="29" width="16" height="10" rx="3" fill="#e8f2dc"/></svg>
+                            <span class="popup-label">Contacts</span>
+                        </a>
+                        <a class="popup-item" href="#">
+                            <svg class="popup-icon" viewBox="0 0 48 48"><text x="4" y="34" font-size="26" font-weight="700" fill="#4a5568" font-family="Arial">A</text><text x="24" y="38" font-size="20" fill="#4a5568">语</text><path d="M8 18a16 16 0 0 1 26-6" fill="none" stroke="#5b9bd5" stroke-width="3"/><path d="M40 30a16 16 0 0 1-26 6" fill="none" stroke="#5b9bd5" stroke-width="3"/></svg>
+                            <span class="popup-label">Translate</span>
+                        </a>
+                        <a class="popup-item" href="#">
+                            <svg class="popup-icon" viewBox="0 0 48 48"><rect x="2" y="10" width="44" height="28" fill="#c00000"/><circle cx="24" cy="24" r="9" fill="#fff"/><path d="M21 19l9 5-9 5z" fill="#c00000"/></svg>
+                            <span class="popup-label">Videos</span>
+                        </a>
+                        <a class="popup-item" href="#">
+                            <svg class="popup-icon" viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="14" fill="#fff" stroke="#4a6fa5" stroke-width="2"/><rect x="6" y="26" width="36" height="12" fill="#5b9bd5"/><text x="24" y="36" font-size="9" font-weight="700" text-anchor="middle" fill="#fff" font-family="Arial">GO!</text></svg>
+                            <span class="popup-label">Search</span>
+                        </a>
+                        <a class="popup-item" href="#">
+                            <svg class="popup-icon" viewBox="0 0 48 48"><rect x="6" y="4" width="36" height="40" fill="#dce8f6"/><circle cx="18" cy="26" r="5" fill="#2e75b6"/><circle cx="30" cy="24" r="5" fill="#2e75b6"/><rect x="8" y="30" width="16" height="12" fill="#ffc000"/><rect x="26" y="30" width="14" height="12" fill="#ffc000"/></svg>
+                            <span class="popup-label">Photos</span>
+                        </a>
+                        <a class="popup-item" href="#">
+                            <svg class="popup-icon" viewBox="0 0 48 48"><path d="M24 24V4a20 20 0 0 1 20 20z" fill="#a9d18e"/><path d="M24 24h20a20 20 0 0 1-20 20z" fill="#c00000"/><path d="M24 24v20A20 20 0 0 1 4 24z" fill="#ffd966"/><path d="M24 24H4A20 20 0 0 1 24 4z" fill="#5b9bd5"/></svg>
+                            <span class="popup-label">Apps</span>
+                        </a>
+                        <a class="popup-item" href="#">
+                            <svg class="popup-icon" viewBox="0 0 48 48"><path d="M10 4h20l10 10v30H10z" fill="#dce8f6"/><path d="M30 4v10h10z" fill="#5b9bd5"/><rect x="16" y="22" width="18" height="2" fill="#8a96a8"/><rect x="16" y="28" width="18" height="2" fill="#8a96a8"/><rect x="16" y="34" width="18" height="2" fill="#8a96a8"/></svg>
+                            <span class="popup-label">Documents</span>
+                        </a>
+                    </div>
+
+                    <!-- кнопка «More»: checkbox + label -->
+                    <input class="more-toggle" type="checkbox" id="more-toggle" aria-label="More">
+                    <label class="more-button" for="more-toggle">More</label>
+
+                    <!-- додаткові іконки (з'являються після натискання «More») -->
+                    <div class="popup-extra">
+                        <div class="popup-grid">
+                            <a class="popup-item" href="#">
+                                <svg class="popup-icon" viewBox="0 0 48 48"><rect x="4" y="8" width="24" height="18" rx="3" fill="#3f5fbf"/><circle cx="16" cy="17" r="5" fill="#fff"/><rect x="22" y="16" width="22" height="18" rx="3" fill="#59a94a"/><circle cx="33" cy="25" r="5" fill="#fff"/></svg>
+                                <span class="popup-label">Chat</span>
+                            </a>
+                            <a class="popup-item" href="#">
+                                <svg class="popup-icon" viewBox="0 0 48 48"><rect x="4" y="8" width="40" height="30" fill="#3b6d35" stroke="#f4a261" stroke-width="3"/><text x="24" y="28" font-size="9" text-anchor="middle" fill="#fff" font-family="monospace">i++ == ?</text></svg>
+                                <span class="popup-label">Classroom</span>
+                            </a>
+                            <a class="popup-item" href="#">
+                                <svg class="popup-icon" viewBox="0 0 48 48"><path d="M12 4h24v40l-12-9-12 9z" fill="#5b9bd5"/><text x="24" y="24" font-size="22" font-weight="700" text-anchor="middle" fill="#fff" font-family="Arial">*</text></svg>
+                                <span class="popup-label">Collection</span>
+                            </a>
+                            <a class="popup-item" href="#">
+                                <svg class="popup-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="#c00000"/><circle cx="20" cy="18" r="7" fill="#f4b6a0"/></svg>
+                                <span class="popup-label">Mars</span>
+                            </a>
+                            <a class="popup-item" href="#">
+                                <svg class="popup-icon" viewBox="0 0 48 48"><rect x="4" y="8" width="40" height="32" fill="#f4b183"/><rect x="8" y="12" width="10" height="10" fill="#7f6a5c"/><rect x="8" y="26" width="10" height="10" fill="#7f6a5c"/><rect x="22" y="14" width="18" height="3" fill="#7f6a5c"/><rect x="22" y="21" width="18" height="3" fill="#7f6a5c"/><rect x="22" y="28" width="18" height="3" fill="#7f6a5c"/></svg>
+                                <span class="popup-label">Blogs</span>
+                            </a>
+                            <a class="popup-item" href="#">
+                                <svg class="popup-icon" viewBox="0 0 48 48"><rect x="4" y="6" width="40" height="36" fill="#4472c4"/><path d="M12 24l14-8v16z" fill="#ffd966"/><rect x="10" y="22" width="6" height="6" fill="#ffd966"/><path d="M30 18q4 6 0 12M34 15q7 9 0 18" fill="none" stroke="#ffd966" stroke-width="2"/></svg>
+                                <span class="popup-label">Promos</span>
+                            </a>
+                        </div>
+                        <a class="popup-more-link" href="#">Even more from Kottans</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <a class="header-bell" href="#" aria-label="Сповіщення">
+            <svg class="header-bell-icon" viewBox="0 0 24 24"><path d="M12 22a2.5 2.5 0 0 0 2.5-2.5h-5A2.5 2.5 0 0 0 12 22zm7-6V11c0-3.1-1.6-5.6-4.5-6.3V4a2.5 2.5 0 0 0-5 0v.7C6.6 5.4 5 7.9 5 11v5l-2 2v1h18v-1z" fill="currentColor"/></svg>
+        </a>
+
+        <a class="header-avatar" href="#" aria-label="Профіль">K</a>
+    </header>
+
+</body>
+</html>

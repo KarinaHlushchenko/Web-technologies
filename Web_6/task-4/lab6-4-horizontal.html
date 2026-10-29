@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 4 — горизонтальна навігація</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-horizontal">
+
+    <!-- fixed-панель зверху -->
+    <nav class="hnav">
+        <ul class="hnav-list">
+            <li class="hnav-item hnav-item--active">
+                <a class="hnav-link" href="#" title="Головна"><span class="material-icons">home</span></a>
+                <ul class="hnav-sub">
+                    <li><a href="#">Новини</a></li>
+                    <li>
+                        <a href="#">Події <span class="material-icons arrow">chevron_right</span></a>
+                        <ul class="hnav-sub">
+                            <li><a href="#">Сьогодні</a></li>
+                            <li><a href="#">Цього тижня</a></li>
+                            <li><a href="#">Архів</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Анонси</a></li>
+                </ul>
+            </li>
+            <li class="hnav-item">
+                <a class="hnav-link" href="#" title="Пошук"><span class="material-icons">search</span></a>
+                <ul class="hnav-sub">
+                    <li><a href="#">Простий пошук</a></li>
+                    <li>
+                        <a href="#">Розширений <span class="material-icons arrow">chevron_right</span></a>
+                        <ul class="hnav-sub">
+                            <li><a href="#">За датою</a></li>
+                            <li><a href="#">За автором</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="hnav-item">
+                <a class="hnav-link" href="#" title="Пошта"><span class="material-icons">email</span></a>
+                <ul class="hnav-sub">
+                    <li><a href="#">Вхідні</a></li>
+                    <li><a href="#">Надіслані</a></li>
+                    <li><a href="#">Чернетки</a></li>
+                </ul>
+            </li>
+            <!-- останній пункт вирівнюється праворуч через float -->
+            <li class="hnav-item hnav-item--right">
+                <a class="hnav-link" href="#" title="Профіль"><span class="material-icons">person</span></a>
+                <ul class="hnav-sub hnav-sub--right">
+                    <li><a href="#">Налаштування</a></li>
+                    <li><a href="#">Вийти</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <h1>Горизонтальна навігація</h1>
+        <p>Панель зафіксована зверху (<code>position: fixed</code>). Наведіть курсор на іконки, щоб побачити випадні пункти.</p>
+
+        <!-- «липка» панель -->
+        <div class="sticky-bar">Липка панель (<code>position: sticky</code>) — прокрутіть сторінку</div>
+
+        <p class="filler">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p class="filler">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p class="filler">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p class="filler">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p class="filler">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <p><a href="lab6-4-vertical.html">→ Вертикальна навігація</a></p>
+    </main>
+</body>
+</html>
