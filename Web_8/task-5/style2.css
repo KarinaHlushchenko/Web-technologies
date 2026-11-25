@@ -1,0 +1,110 @@
+/* Спосіб 2: grid-template-areas */
+
+:root {
+    --color-bg: #fff5f5;
+    --color-block-bg: #ffffff;
+    --color-accent: #ff5a40;
+    --color-text: #222222;
+    --color-shadow: rgba(0, 0, 0, 0.2);
+    --font-family: "Poppins", Arial, sans-serif;
+    --page-max-width: 1000px;
+    --page-padding: 16px;
+    --layout-gap: 12px;
+    --header-height: 50px;
+    --nav-height: 50px;
+    --main-height: 300px;
+    --small-block-height: 50px;
+    --footer-height: 50px;
+    --sidebar-width: 150px;
+    --ads-width: 150px;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: 0.8rem;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+}
+
+/* ---------- Mobile (за замовчуванням): одна колонка ---------- */
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: var(--header-height) var(--nav-height) minmax(var(--main-height), 1fr) var(--small-block-height) var(--small-block-height) var(--footer-height);
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "sidebar"
+        "ads"
+        "footer";
+    gap: var(--layout-gap);
+    max-width: var(--page-max-width);
+    margin: 0 auto;
+    padding: var(--page-padding);
+}
+
+.layout__header,
+.layout__nav,
+.layout__main,
+.layout__sidebar,
+.layout__ads,
+.layout__footer {
+    padding: 8px;
+    background-color: var(--color-block-bg);
+    border: 2px solid var(--color-accent);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px var(--color-shadow);
+}
+
+.layout__header {
+    grid-area: header;
+}
+
+.layout__nav {
+    grid-area: nav;
+}
+
+.layout__main {
+    grid-area: main;
+}
+
+.layout__sidebar {
+    grid-area: sidebar;
+}
+
+.layout__ads {
+    grid-area: ads;
+}
+
+.layout__footer {
+    grid-area: footer;
+}
+
+/* ---------- Tablet: від 768px ---------- */
+
+@media (min-width: 768px) {
+    .layout {
+        grid-template-columns: var(--sidebar-width) 1fr;
+        grid-template-rows: var(--header-height) var(--nav-height) minmax(var(--main-height), 1fr) var(--footer-height);
+        grid-template-areas:
+            "header header"
+            "nav nav"
+            "sidebar main"
+            "ads footer";
+    }
+}
+
+/* ---------- Desktop: від 1024px ---------- */
+
+@media (min-width: 1024px) {
+    .layout {
+        grid-template-columns: var(--sidebar-width) 1fr var(--ads-width);
+        grid-template-areas:
+            "header header header"
+            "sidebar nav ads"
+            "sidebar main ads"
+            "footer footer footer";
+    }
+}

@@ -1,0 +1,135 @@
+:root {
+    --color-bg: #ffffff;
+    --color-text: #222222;
+    --color-card-bg: #ffffff;
+    --color-btn-bg: #808080;
+    --color-btn-text: #ffffff;
+    --color-shadow: rgba(0, 0, 0, 0.35);
+    --font-text: Georgia, "Times New Roman", serif;
+    --font-btn: Arial, Helvetica, sans-serif;
+    --page-max-width: 1000px;
+    --page-padding: 20px;
+    --cards-gap: 20px;
+    --cards-columns: 3;
+    --large-span: 2;
+    --card-padding: 16px;
+    --title-lines: 2;
+    --text-lines: 3;
+}
+
+body {
+    font-family: var(--font-text);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+}
+
+.page {
+    max-width: var(--page-max-width);
+    margin: 0 auto;
+    padding: var(--page-padding);
+}
+
+.page__title {
+    margin-bottom: 24px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* ---------- Cards (CSS Grid) ---------- */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(var(--cards-columns), minmax(0, 1fr));
+    gap: var(--cards-gap);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    background-color: var(--color-card-bg);
+    box-shadow: 2px 3px 6px var(--color-shadow);
+}
+
+.card--large {
+    grid-column: span var(--large-span);
+}
+
+.card__img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.card__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 0;
+    padding: var(--card-padding);
+}
+
+/* Переповнення контенту: довгі слова переносяться, довгий текст обрізається */
+.card__title,
+.card__text {
+    overflow: hidden;
+    overflow-wrap: anywhere;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+
+.card__title {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    -webkit-line-clamp: var(--title-lines);
+    line-clamp: var(--title-lines);
+}
+
+.card__text {
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+    -webkit-line-clamp: var(--text-lines);
+    line-clamp: var(--text-lines);
+}
+
+.card__btn {
+    display: block;
+    margin-top: auto;
+    padding: 8px 12px;
+    overflow: hidden;
+    font-family: var(--font-btn);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-btn-text);
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-color: var(--color-btn-bg);
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 768px) {
+    :root {
+        --cards-columns: 2;
+        --large-span: 2;
+        --cards-gap: 15px;
+    }
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 576px) {
+    :root {
+        --cards-columns: 1;
+        --large-span: 1;
+        --cards-gap: 12px;
+        --page-padding: 12px;
+    }
+
+    .page__title {
+        font-size: 1.5rem;
+    }
+}

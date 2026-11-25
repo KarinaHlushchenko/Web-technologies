@@ -1,0 +1,71 @@
+:root {
+    --color-bg: #ffffff;
+    --color-item-bg: #fdd83f;
+    --color-item-text: #ffffff;
+    --font-family: "Times New Roman", Times, serif;
+    --page-max-width: 1000px;
+    --page-padding: 20px;
+    --tree-columns: 6;
+    --tree-rows: 12;
+    --tree-gap: 6px;
+    --row-height: 31px;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--color-bg);
+}
+
+.page {
+    max-width: var(--page-max-width);
+    margin: 0 auto;
+    padding: var(--page-padding);
+}
+
+/* ---------- Tree (CSS Grid) ---------- */
+
+.tree {
+    display: grid;
+    grid-template-columns: repeat(var(--tree-columns), 1fr);
+    grid-template-rows: repeat(var(--tree-rows), var(--row-height));
+    grid-auto-flow: column;
+    gap: var(--tree-gap);
+    list-style: none;
+    counter-reset: item;
+}
+
+.tree__item {
+    display: flex;
+    justify-content: center;
+    padding-top: 4px;
+    font-size: 1rem;
+    color: var(--color-item-text);
+    background-color: var(--color-item-bg);
+    counter-increment: item;
+}
+
+    /* Нумерація блоків через generated content */
+    .tree__item::before {
+        content: counter(item);
+    }
+
+/* Скільки рядків займає блок (12 рядків ділиться на 1, 2, 3, 4, 6, 12) */
+.tree__item--span-12 {
+    grid-row: span 12;
+}
+
+.tree__item--span-6 {
+    grid-row: span 6;
+}
+
+.tree__item--span-4 {
+    grid-row: span 4;
+}
+
+.tree__item--span-3 {
+    grid-row: span 3;
+}
+
+.tree__item--span-2 {
+    grid-row: span 2;
+}
